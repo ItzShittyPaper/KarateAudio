@@ -1,3 +1,5 @@
+> Warning: THIS VERSION IS ONLY FOR DEVELOPMENT, BETA VERSIONS OFTEN DON'T WORK AS INTENDED, OR STRAIGHT UP DON'T OPEN. I'M OPEN TO CONTRIBUTIONS IN THIS BRANCH!
+
 # About KarateMp3
 Here is my c++ audio solution with gif visualizer!
 I decided to create this because i like cool visualizers and i was bored.
