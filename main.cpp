@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -10,10 +11,10 @@ string path;
 
 int main() {
     
-    printf("choose a option ( 1/2 )");
-    printf("-----------------------");
-    printf("1. Play a file.");
-    printf("2. Options");
+    cout << "choose a option ( 1/2 )" << endl;
+    cout << "-----------------------" << endl;
+    cout << "1. Play a mp3 file. (requires mpg123)" << endl;
+    cout << "2. Options" << endl;
     
     cin >> option;
     
@@ -44,9 +45,9 @@ int main() {
         case 2: {
         
     
-    		printf("choose a option ( 1/1 for now )");
-    		printf("-----------------------");
-    		printf("1. Show a GIF path");
+    		cout << "choose a option ( 1/1 for now )" << endl;
+    		cout << "-----------------------" << endl;
+    		cout << "1. Show a GIF path" << endl;
     		
 		cin >> options_option;
 		
