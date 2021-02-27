@@ -7,6 +7,7 @@ using namespace std;
 int option;
 int options_option;
 string str = "mpg123 ";
+string str2 = "ogg123 ";
 string path;
 
 int main() {
@@ -14,7 +15,8 @@ int main() {
     cout << "choose a option ( 1/2 )" << endl;
     cout << "-----------------------" << endl;
     cout << "1. Play a mp3 file. (requires mpg123)" << endl;
-    cout << "2. Options" << endl;
+    cout << "2. Play a ogg file. (requires ogg123, linux only)" << endl;
+    cout << "3. Options" << endl;
     
     cin >> option;
     
@@ -36,15 +38,28 @@ int main() {
             const char *command = str.c_str();
 
             system(command);
-
+		
+	    return 0;
             break;
         }
     
-        return 0;
-    
-        case 2: {
+    	case 2: {
+	
+            printf("Type in path to your desired audio file: ");
+            cin >> path;
         
-    
+            str2 = str2 + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
+            const char *command = str2.c_str2();
+
+            system(command);
+		
+	    return 0;
+            break;
+
+        }	
+
+        case 3: {
+        
     		cout << "choose a option ( 1/1 for now )" << endl;
     		cout << "-----------------------" << endl;
     		cout << "1. Show a GIF path" << endl;
@@ -66,7 +81,6 @@ int main() {
             			return 0;		
 
 			}
-
 		} 
         }
     }
