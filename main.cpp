@@ -1,14 +1,14 @@
 #include <iostream> 
 #include <cstdlib>
-#include <fstream>
+#include "confuse.h"
+
+#include "mp3.cpp"
 
 using namespace std;
 
 int option;
 int options_option;
-string str = "mpg123 ";
 string str2 = "ogg123 ";
-string path;
 
 int main() {
     
@@ -16,7 +16,7 @@ int main() {
     cout << "-----------------------" << endl;
     cout << "1. Play a mp3 file. (requires mpg123)" << endl;
     cout << "2. Play a ogg file. (requires ogg123, linux only)" << endl;
-    cout << "3. Options" << endl;
+    cout << "3. Config and GIF paths." << endl;
     
     cin >> option;
     
@@ -30,17 +30,10 @@ int main() {
         }
             
         case 1: {
-        
-            printf("Type in path to your desired audio file: ");
-            cin >> path;
-        
-            str = str + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
-            const char *command = str.c_str();
 
-            system(command);
-		
-	    return 0;
-            break;
+		play_mp3();
+
+		break;
         }
     
     	case 2: {
@@ -49,7 +42,7 @@ int main() {
             cin >> path;
         
             str2 = str2 + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
-            const char *command = str2.c_str2();
+            const char *command = str2.c_str();
 
             system(command);
 		
