@@ -17,7 +17,22 @@ Installation is very easy, just copy downloaded code into your desired directory
 Gif with visualization should be in `$HOME/.config/KarateMp3/visualisation/vis.gif`
 
 # Compilation
-To compile it for yourself, you don't need any additional libraries.
-Just type `g++ /path/to/main.cpp -o /path/to/compiled/binary`
+To compile it for yourself, you need to install `libconfuse` though.
+
+> Ubuntu/Debian (and simillar)
+```sudo apt-get install libconfuse-dev```
+
+> Arch Linux
+```1. Enable the community repository on /etc/pacman.conf:
+
+   [community]
+   Include = /etc/pacman.d/mirrorlist
+   
+   2. sudo pacman -S confuse```
+
+> Fedora
+```dnf install libconfuse```
+
+Just type `g++ -L/usr/lib /path/to/main.cpp -o /path/to/compiled/binary -lconfuse`
 
 It's that easy!
