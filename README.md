@@ -14,6 +14,8 @@ Why? `mpg123 / ogg123` is the actual backend for playing audio files, and `mpv` 
 
 # Installation
 Installation is very easy, just copy downloaded code into your desired directory.
+
+Config file is in `$HOME/.config/KarateMp3/config.conf`
 Gif with visualization should be in `$HOME/.config/KarateMp3/visualisation/vis.gif`
 
 # Compilation
