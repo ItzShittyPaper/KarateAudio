@@ -17,7 +17,7 @@ Installation is very easy, just copy downloaded code into your desired directory
 Gif with visualization should be in `$HOME/.config/KarateMp3/visualisation/vis.gif`
 
 # Compilation
-To compile it for yourself, you need to install `libconfuse` though.
+If you want to compile it for yourself, there are only a few commands, but you need to install `libconfuse` though.
 
 > Ubuntu/Debian (and simillar)
 ```sudo apt-get install libconfuse-dev```
