@@ -23,12 +23,8 @@ To compile it for yourself, you need to install `libconfuse` though.
 ```sudo apt-get install libconfuse-dev```
 
 > Arch Linux
-```1. Enable the community repository on /etc/pacman.conf:
+```Include = /etc/pacman.d/mirrorlist | [community] | sudo pacman -S confuse```
 
-   [community]
-   Include = /etc/pacman.d/mirrorlist
-   
-   2. sudo pacman -S confuse```
 
 > Fedora
 ```dnf install libconfuse```
