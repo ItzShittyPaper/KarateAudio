@@ -41,7 +41,7 @@ int main() {
             printf("Type in path to your desired audio file: ");
             cin >> path;
         
-            str2 = str2 + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
+            str2 = str2 + path + " & mpv --loop $HOME/.config/KarateMp3/visualisation/vis.gif";
             const char *command = str2.c_str();
 
             system(command);
@@ -70,7 +70,7 @@ int main() {
 			
 			case 1: {
 				
-            			printf("GIF path: $HOME/.config/KarateMp3/visualization/vis.gif");
+            			printf("GIF path: $HOME/.config/KarateMp3/visualisation/vis.gif");
             			return 0;		
 
 			}
