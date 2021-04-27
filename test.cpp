@@ -2,23 +2,33 @@
 #include <cstdlib>
 #include <fstream>
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_mixer.h>
+#include <SDL2/SDL.h>
+#include <SDL2_mixer/SDL_mixer.h>
 
 using namespace std;
 
 int option;
 int options_option;
 string visualiser;
-
+Mix_Music* music;
 string path;
 
 string str2 = "ogg123 ";
 string str = "mpg123 -q ";
 string str_vis;
 
-int main() {
-    
+int main(int argc, char **argv) {
+   
+    int result = 0;
+    int flags = MIX_INIT_MP3;
+
+    //Starting SDL2 mixer
+    if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+        printf("Failed to init SDL\n");
+        exit(1);
+    }
+
+    //Main Menu
     cout << "choose a option ( 1/3 )" << endl;
     cout << "-----------------------" << endl;
     cout << "1. Play a mp3 file. (requires mpg123)" << endl;
@@ -28,9 +38,9 @@ int main() {
     cin >> option;
     
     switch(option) {
-        
+    
         default: {
-            
+	            
             printf("Error 404: there is no such an option");
             return 404;
             
@@ -67,11 +77,24 @@ int main() {
 
         	if(visualiser == "visualiser = false") {
 
-                	str = str + path;
-                	const char *command = str.c_str();
+                	Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 4096);
 
-                	system(command);
-			exit(0);
+			if (flags != (result = Mix_Init(flags))) {
+        			printf("Could not initialize mixer (result: %d).\n", result);
+        			printf("Mix_Init: %s\n", Mix_GetError());
+        			exit(1);
+    			}
+
+			Mix_Music *music = Mix_LoadMUS(path);
+			Mix_PlayMusic(music, 1);
+
+			while (!SDL_QuitRequested()) {
+        			SDL_Delay(250);
+    			}
+
+			Mix_FreeMusic(music);
+    			SDL_Quit();
+    			return 0;
 
         	}
         	else {
