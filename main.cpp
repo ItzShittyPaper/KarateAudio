@@ -2,8 +2,8 @@
 #include <cstdlib>
 #include <fstream>
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_mixer.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 
 using namespace std;
 
@@ -13,11 +13,10 @@ string visualiser;
 
 string path;
 
-string str2 = "ogg123 ";
-string str = "mpg123 -q ";
+string str = "ogg123 ";
 string str_vis;
 
-int main() {
+int main(int argc, char **argv) {
     
     cout << "choose a option ( 1/3 )" << endl;
     cout << "-----------------------" << endl;
@@ -67,20 +66,69 @@ int main() {
 
         	if(visualiser == "visualiser = false") {
 
-                	str = str + path;
-                	const char *command = str.c_str();
+                	int result = 0;
+    			int flags = MIX_INIT_MP3;
 
-                	system(command);
+    			if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+        			printf("Failed to init SDL\n");
+        			exit(1);
+    			}
+
+    			if (flags != (result = Mix_Init(flags))) {
+        		printf("Could not initialize mixer (result: %d).\n", result);
+        		printf("Mix_Init: %s\n", Mix_GetError());
+        		exit(1);
+    			}
+
+			const char *path_mp3 = path.c_str();
+
+    			Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+    			Mix_Music *music = Mix_LoadMUS(path_mp3);
+    			Mix_PlayMusic(music, 1);
+
+    			while (!SDL_QuitRequested()) {
+        			SDL_Delay(250);
+    			}
+
+    			Mix_FreeMusic(music);
+    			SDL_Quit();
+
 			exit(0);
 
         	}
         	else {
 
-                	str_vis = str + path + " & mpv --loop $HOME/.config/KarateMp3/visualisation/vis.gif";
-                	const char *command_vis = str_vis.c_str();
+                	int result = 0;
+    			int flags = MIX_INIT_MP3;
 
-                	system(command_vis);
-			exit(0);
+    			if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+        			printf("Failed to init SDL\n");
+        			exit(1);
+    			}
+
+    			if (flags != (result = Mix_Init(flags))) {
+        		printf("Could not initialize mixer (result: %d).\n", result);
+        		printf("Mix_Init: %s\n", Mix_GetError());
+        		exit(1);
+    			}
+
+			system("mpv --loop $HOME/.config/KarateMp3/visualisation/vis.gif");
+
+			const char *path_mp3 = path.c_str();
+
+    			Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+    			Mix_Music *music = Mix_LoadMUS(path_mp3);
+    			Mix_PlayMusic(music, 1);
+
+    			while (!SDL_QuitRequested()) {
+        			SDL_Delay(250);
+    			}
+
+    			Mix_FreeMusic(music);
+    			SDL_Quit();
+
+			return 0;
+
         	}
 		break;
         }
@@ -90,8 +138,8 @@ int main() {
             printf("Type in path to your desired audio file: ");
             cin >> path;
         
-            str2 = str2 + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
-            const char *command = str2.c_str();
+            str = str + path + " & mpv --loop $HOME/.config/KarateMp3/visualization/vis.gif";
+            const char *command = str.c_str();
 
             system(command);
 		
