@@ -1,19 +1,20 @@
 #include <iostream> 
 #include <cstdlib>
 #include <fstream>
+#include <ncurses.h>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
 
 using namespace std;
 
+const char pausekey = 'p';
+
 int option;
 int options_option;
 string visualiser;
 
 string path;
-
-string str = "ogg123 ";
 string str_vis;
 
 int main(int argc, char **argv) {
@@ -30,7 +31,7 @@ int main(int argc, char **argv) {
         
         default: {
             
-            printf("Error 404: there is no such an option");
+            printf("Error 404: there is no such an option \n");
             return 404;
             
         }
@@ -66,10 +67,10 @@ int main(int argc, char **argv) {
 			config.close();
 			cout << visualiser << endl;
 
-        		if(visualiser == "visualiser = false") {
+        	if(visualiser == "visualiser = false") {
 
-                	int result = 0;
-    				int flags = MIX_INIT_MP3;
+                int result = 0;
+    			int flags = MIX_INIT_MP3;
 
     			if (SDL_Init(SDL_INIT_AUDIO) < 0) {
         			printf("Failed to init SDL\n");
@@ -77,9 +78,9 @@ int main(int argc, char **argv) {
     			}
 
     			if (flags != (result = Mix_Init(flags))) {
-        		printf("Could not initialize mixer (result: %d).\n", result);
-        		printf("Mix_Init: %s\n", Mix_GetError());
-        		exit(1);
+        			printf("Could not initialize mixer (result: %d).\n", result);
+        			printf("Mix_Init: %s\n", Mix_GetError());
+        			exit(1);
     			}
 
 				const char *path_mp3 = path.c_str();
@@ -93,10 +94,10 @@ int main(int argc, char **argv) {
     			}
 
     			Mix_FreeMusic(music);
-    			SDL_Quit();
-				exit(0);
+    			Mix_Quit();
+				return 0;
 
-        	}
+			}
         	else {
 
             	int result = 0;
@@ -108,9 +109,9 @@ int main(int argc, char **argv) {
     			}
 
     			if (flags != (result = Mix_Init(flags))) {
-        		printf("Could not initialize mixer (result: %d).\n", result);
-        		printf("Mix_Init: %s\n", Mix_GetError());
-        		exit(1);
+        			printf("Could not initialize mixer (result: %d).\n", result);
+        			printf("Mix_Init: %s\n", Mix_GetError());
+        			exit(1);
     			}
 
 				system("mpv --loop $HOME/.config/KarateMp3/visualisation/vis.gif");
@@ -125,10 +126,11 @@ int main(int argc, char **argv) {
         			SDL_Delay(250);
     			}
 
-    			Mix_FreeMusic(music);
-    			SDL_Quit();
 
+    			Mix_FreeMusic(music);
+    			Mix_Quit();
 				return 0;
+
         	}
 		}
 		break;
