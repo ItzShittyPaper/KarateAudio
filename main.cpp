@@ -26,8 +26,7 @@ int main(int argc, char **argv) {
     
     cin >> option;
     
-    switch(option)
-	{
+    switch(option) {
         
         default: {
             
@@ -100,7 +99,7 @@ int main(int argc, char **argv) {
         	}
         	else {
 
-            int result = 0;
+            	int result = 0;
     			int flags = MIX_INIT_MP3;
 
     			if (SDL_Init(SDL_INIT_AUDIO) < 0) {
@@ -129,9 +128,10 @@ int main(int argc, char **argv) {
     			Mix_FreeMusic(music);
     			SDL_Quit();
 
-			return 0;
-			break;
-        }
+				return 0;
+        	}
+		}
+		break;
 
     	case 2: {
 			goto play;
@@ -161,6 +161,6 @@ int main(int argc, char **argv) {
 
 				} 
     		}
-		}
+		}	
 	}
 }
