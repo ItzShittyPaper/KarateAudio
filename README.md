@@ -14,7 +14,7 @@ You can install these trough pacman:
 Or apt:
 ```sudo apt install mpv sdl2 sdl_mixer sdl2-dev sdl_mixer-dev```
 
-Why? ogg123 is the backend for playing ogg files, and `mpv` is for playing and controlling a visualizer. Yes, it is bloated. mp3's have custom built-in backend.
+Why? `mpv` is for playing and controlling a visualizer. Yes, it is bloated.
 
 # Installation
 Installation is very easy, just copy downloaded code into your desired directory.
