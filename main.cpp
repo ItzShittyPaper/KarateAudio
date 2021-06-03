@@ -6,12 +6,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
 
-#define LOGO_PAIR 1
-
 using namespace std;
 
 const char pausekey = 'p';
 
+int c = getch();
 int option;
 int options_option;
 string visualiser;
@@ -34,11 +33,11 @@ int main(int argc, char **argv) {
 	printf("                                     |_| \n \n");
 
 	cout << "-------------------------------------------------" << endl;
-    cout << "choose a option ( 1/3 )" << endl;
+    cout << "choose a option ( 1/2 )" << endl;
     cout << "-------------------------------------------------" << endl;
-    cout << "1. Play a mp3 file." << endl;
-    cout << "2. Play a ogg file." << endl;
-    cout << "3. Config and GIF paths." << endl;
+    cout << "1. Play an audio file." << endl;
+    cout << "2. Config and GIF paths." << endl;
+	cout << "3. Sauce" << endl;
     
     cin >> option;
     
@@ -142,7 +141,6 @@ int main(int argc, char **argv) {
         			SDL_Delay(250);
     			}
 
-
     			Mix_FreeMusic(music);
     			Mix_Quit();
 				return 0;
@@ -151,14 +149,10 @@ int main(int argc, char **argv) {
 		}
 		break;
 
-    	case 2: {
-			goto play;
-		}		
-
-        case 3: {
+        case 2: {
 			
 			cout << "-------------------------------" << endl;
-    		cout << "choose a option ( 1/1 for now )" << endl;
+    		cout << "choose an option ( 1/1 for now )" << endl;
     		cout << "-------------------------------" << endl;
     		cout << "1. Show a GIF path" << endl;
     		
@@ -180,6 +174,13 @@ int main(int argc, char **argv) {
 
 				} 
     		}
+		}
+		break;
+
+		case 3: {
+
+			printf("there is no sauce you perverted degenerate.\n But here is my site: https://niezesrajsie.tk \n");
+
 		}	
 	}
 }
