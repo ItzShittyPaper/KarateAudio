@@ -6,6 +6,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
 
+#define LOGO_PAIR 1
+
 using namespace std;
 
 const char pausekey = 'p';
@@ -18,15 +20,29 @@ string path;
 string str_vis;
 
 int main(int argc, char **argv) {
-    
+
+	// Main Menu
+	printf("-------------------------------------------------- \n \n");
+
+	printf(" _   __                _      ___  ___      _____ \n");
+	printf("| | / /               | |     |  \\/  |     |____ | \n");
+	printf("| |/ /  __ _ _ __ __ _| |_ ___| .  . |_ __     / / \n");
+	printf("|    \\ / _` | '__/ _` | __/ _ | |\\/| | '_ \\    \\ \\ \n");
+	printf("| |\\  | (_| | | | (_| | ||  __| |  | | |_) .___/ / \n");
+	printf("\\_| \\_/\\__,_|_|  \\__,_|\\__\\___\\_|  |_| .__/\\____/ \n");
+	printf("                                     | | \n");
+	printf("                                     |_| \n \n");
+
+	cout << "-------------------------------------------------" << endl;
     cout << "choose a option ( 1/3 )" << endl;
-    cout << "-----------------------" << endl;
-    cout << "1. Play a mp3 file. (requires mpg123)" << endl;
-    cout << "2. Play a ogg file. (requires ogg123, linux only)" << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "1. Play a mp3 file." << endl;
+    cout << "2. Play a ogg file." << endl;
     cout << "3. Config and GIF paths." << endl;
     
     cin >> option;
     
+	// Rest of the program
     switch(option) {
         
         default: {
@@ -87,7 +103,7 @@ int main(int argc, char **argv) {
 
     			Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
     			Mix_Music *music = Mix_LoadMUS(path_mp3);
-    			Mix_PlayMusic(music, 1);
+    			Mix_PlayMusic(music, -1);
 
     			while (!SDL_QuitRequested()) {
         			SDL_Delay(250);
@@ -140,9 +156,10 @@ int main(int argc, char **argv) {
 		}		
 
         case 3: {
-        
+			
+			cout << "-------------------------------" << endl;
     		cout << "choose a option ( 1/1 for now )" << endl;
-    		cout << "-----------------------" << endl;
+    		cout << "-------------------------------" << endl;
     		cout << "1. Show a GIF path" << endl;
     		
 			cin >> options_option;
