@@ -1,7 +1,7 @@
 # About KarateMp3
 Here is my c++ audio solution with gif visualizer!
 I decided to create this because i like cool visualisers and i was bored.
-It currently plays only mp3 and ogg files.
+It currently plays mp3, wav, flac and ogg files.
 You can download it for free for your linux (and windows soon!) system.
 Due to apple's own compiler and lack of mac machines in my house it will not be avalible (never ever) on mac systems.
 
