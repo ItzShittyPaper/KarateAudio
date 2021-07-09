@@ -8,7 +8,7 @@ Due to apple's own compiler and lack of mac machines in my house it will not be 
 ps: legacy versions support osx, you can try them.
 
 # Dependencies
-To make my thing to work in 100% you need `mpv`, SDL2 + SDL2_mixer and `ogg123`
+To make my thing to work in 100% you need `mpv` and SDL2 + SDL2_mixer
 
 You can install these trough pacman:
 ```sudo pacman -S mpv sdl2 sdl2_mixer```
