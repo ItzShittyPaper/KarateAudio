@@ -1,5 +1,5 @@
-# About KarateMp3
-Here is my c audio solution.
+# About KarateAudio
+Here is my C audio solution.
 I decided to create this because i decided to make suckless-compliant music player.
 It currently plays mp3, wav, flac and ogg files.
 You can download it for free for your linux (and windows soon!) system.
