@@ -1,0 +1,20 @@
+--- main.old.c	2021-07-10 11:11:06.311583077 +0000
++++ main.c	2021-07-10 11:10:40.918249910 +0000
+@@ -3,9 +3,17 @@
+ #include "stdio.h"
+ #include "config.h"
+ 
++/* path variable */
++char path[512];
++
+ /* main function, selects the file and plays it */
+ int main() {
+ 
++	printf(" _   __                _      ___  ___      _____\n| | / /               | |     |  \\/  |     |____ | \n| |/ /  __ _ _ __ __ _| |_ ___| .  . |_ __     / / \n|    \\ / _` | '__/ _` | __/ _ | |\\/| | '_ \\    \\ \\ \n| |\\  | (_| | | | (_| | ||  __| |  | | |_) .___/ /\n\\_| \\_/\\__,_|_|  \\__,_|\\__\\___\\_|  |_| .__/\\____/ \n                                     | |\n                                     |_| \n");
++
++	printf("Specify the path: \n");
++	scanf("%s",&path);
++	
+ 	Mix_Music *music;
+ 
+ 	int result = 0;
