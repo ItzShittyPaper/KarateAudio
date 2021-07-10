@@ -11,7 +11,7 @@ int main() {
 	int result = 0;
 	int flags = MIX_INIT_MP3;
 
-	// Starting SDL2 mixer
+	/* Starting SDL2 mixer */
 	if (SDL_Init(SDL_INIT_AUDIO) < 0) {
 
 		printf("Failed to init SDL\n");
@@ -19,6 +19,7 @@ int main() {
 
 	}
 
+	/* Start the audio engine */
 	Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 4096);
 	if (flags != (result = Mix_Init(flags))) {
 
@@ -28,7 +29,9 @@ int main() {
 
 	}
 
+	/* Loading the music */
 	music = Mix_LoadMUS(path);
+	/* playing dat shit */
 	Mix_PlayMusic(music, how_many_loops);
 
 	if (music == NULL) {
@@ -43,6 +46,7 @@ int main() {
 	          	SDL_Delay(100);
 	       	}
 
+		/* quitting */
 		Mix_FreeMusic(music);
 		SDL_Quit();
 		return 0;
