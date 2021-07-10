@@ -44,8 +44,8 @@ I don't give a fuck about errors in my code, if you saw one, just report it in i
 ## Fan-Made Michaelsoft© Binbows™ support is encouraged and appreciated.
 But i won't support it probably.
 
-## If you payed someone for this shit, you have been scammed.
-My shit is free, go beat up that guy. And how did you bought this?
+## If you bought that shit for money, you have been scammed.
+My shit is free lmao. And how did you bought this?
 Get real, nobody would pay for this piece of turd.
 
 # DI ENT
