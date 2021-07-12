@@ -1,0 +1,28 @@
+--- main.c	2021-07-11 08:41:04.428666136 +0000
++++ main.c	2021-07-11 08:39:58.565307409 +0000
+@@ -10,6 +10,25 @@
+ 		strcpy(path, argv[1]);
+ 	}
+ 
++	if( argc == 3 ) {
++		
++		FILE *file;
++		char string[1024];	  
++
++		file = fopen(argv[2],"r");
++		if (!file) {
++			return 0;
++		}
++
++		while (fgets(string, sizeof(string), file) != NULL) {
++			printf(string);
++		}
++
++		fclose(file);
++		exit(0);
++
++	}
++
+ 	Mix_Music *music;
+ 
+ 	int result = 0;

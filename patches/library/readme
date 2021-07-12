@@ -1,0 +1,7 @@
+----------------------------
+HOW TO USE THE LIBRARY PATCH
+----------------------------
+
+use the command "-l" and specify your library file
+
+`karate -l /home/m4kulatura/library`
