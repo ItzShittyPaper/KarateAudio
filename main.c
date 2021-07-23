@@ -4,7 +4,13 @@
 #include "config.h"
 
 /* main function, selects the file and plays it */
-int main() {
+int main( int argc, char *argv[] ) {
+
+	if (argc == 2) {
+
+		strcpy(path, argv[1]);
+
+	}
 
 	Mix_Music *music;
 
