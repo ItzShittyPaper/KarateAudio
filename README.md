@@ -41,7 +41,7 @@ If you want to steal it for your purposes, do it. Maybe i will see it and give y
 ## If something doesn't work, post it in issues and nothing else.
 I don't give a fuck about errors in my code, if you saw one, just report it in issues tab. MAYBE i will fix it (if i can)
 
-## Fan-Made Michaelsoft© Binbows™ support is encouraged and appreciated.
+## Fan-Made support is encouraged and appreciated.
 But i won't support it probably.
 
 ## If you bought that shit for money, you have been scammed.
