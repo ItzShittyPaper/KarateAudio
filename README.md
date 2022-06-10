@@ -1,9 +1,9 @@
 # About KarateAudio
 Here is my C audio solution.
-I decided to create this because i decided to make suckless-compliant music player.
+I decided to create this because i there isn't any suckless music player on the market.
 It currently plays mp3, wav, flac and ogg files.
 You can download it for free for your linux (and windows soon!) system.
-Due to apple's own compiler and lack of mac machines in my home it will not be avalible (never ever) on mac systems.
+Due to apple's C compiling error bullshit and lack of macintoshes at my house it will not be avalible (never ever) on mac systems.
 
 ps: legacy versions support osx, you can try them.
 
